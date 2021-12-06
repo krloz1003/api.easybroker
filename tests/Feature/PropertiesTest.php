@@ -10,7 +10,7 @@ use Tests\TestCase;
 class PropertiesTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * Basic test requests in the EasyBroker api.
      *
      * @return void
      */

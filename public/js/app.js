@@ -5323,11 +5323,21 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    /**
+     * Calculate the last page.
+     */
     last_page: function last_page() {
       return this.total ? this.total / this.pagination.limit | 0 : 0;
     }
   },
   methods: {
+    /**
+     * Request the properties according to the paging parameters
+     * @page Current page
+     * @total Total pages
+     * @limit Records per page
+     * 
+     */
     getData: function getData() {
       var _this = this;
 
@@ -5338,10 +5348,18 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = false;
       });
     },
+
+    /**
+     * Go to the previous page
+     */
     previous: function previous() {
       this.pagination.page = this.pagination.page <= 1 ? 1 : this.pagination.page - 1;
       this.getData();
     },
+
+    /**
+     * Go to the next page
+     */
     next: function next() {
       this.pagination.page = this.pagination.page >= this.last_page ? this.last_page : this.pagination.page + 1;
       this.getData();

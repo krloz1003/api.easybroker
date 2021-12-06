@@ -76,11 +76,21 @@
             total: 0
         }),
         computed: {
+            /**
+             * Calculate the last page.
+             */
             last_page() {
                 return  (this.total)? (this.total / this.pagination.limit|0) : 0;
             }
         },
         methods: {            
+            /**
+             * Request the properties according to the paging parameters
+             * @page Current page
+             * @total Total pages
+             * @limit Records per page
+             * 
+             */
             getData(){
                 this.loading = true;
                 PropertieService.getPropierties(this.pagination).
@@ -90,10 +100,16 @@
                     this.loading    = false;
                 })
             },
+            /**
+             * Go to the previous page
+             */
             previous(){
                 this.pagination.page = (this.pagination.page <= 1)? 1 : this.pagination.page - 1 ;
                 this.getData();
             },
+            /**
+             * Go to the next page
+             */
             next(){
                 this.pagination.page = (this.pagination.page >= this.last_page)? this.last_page : this.pagination.page + 1 ;
                 this.getData();

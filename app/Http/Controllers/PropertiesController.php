@@ -9,8 +9,13 @@ class PropertiesController extends Controller
 {
     private $params;
 
+    /**
+     * Get data from API, with the help of GuzzleHttp package.
+     * @API_KEY configure in .env file
+     */
     public function index(Request $request){
-
+        
+        // Params the pagination
         $this->params['query'] = $request->toArray();
         
         $client = new Client([
