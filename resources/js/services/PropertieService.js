@@ -1,7 +1,7 @@
 class PropertieService {
     
-    getPropierties(){
-        return axios.get(`${routeBase}/api/properties` );
+    getPropierties(params){
+        return axios.get(`/api/properties` );
     }
 }
 
