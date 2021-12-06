@@ -12,35 +12,15 @@
     <body>
         <nav class="navbar navbar-light bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="javascript:;">Inicio</a>
           </div>
         </nav>
-        <main>
-            <h1 class="visually-hidden">Features examples</h1>
-            <div class="container px-4 py-5" id="app" >
-                <h2 class="pb-2 border-bottom">Propertys</h2>
-                <properties-component />
-                <!--<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                    <div class="feature col">
-                        <div class="feature-icon bg-primary bg-gradient">
-                            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-                        </div>
-                        <h2>Featured title</h2>
-                        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                        <a href="#" class="icon-link">
-                        Call to action
-                        <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-                        </a>
-                    </div>
-                </div>-->
-            </div>
+        <main id="app">
+            <properties-component />
         </main>
     </body>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="{{ mix('/js/app.js') }}"></script>
-    <script type="text/javascript">
-        var routeBase = '{!! url("") !!}';
-    </script>
 
 </html>

@@ -7,7 +7,12 @@ use GuzzleHttp\Client;
 
 class PropertiesController extends Controller
 {
-    public function index(){
+    private $params;
+
+    public function index(Request $request){
+
+        $this->params['query'] = $request->toArray();
+        
         $client = new Client([
             'base_uri' => 'https://api.stagingeb.com/v1/',
             'headers' => array(
@@ -15,8 +20,9 @@ class PropertiesController extends Controller
             )
         ]);
         // Send a request to https://api.stagingeb.com/
-        $request = $client->request('GET', 'properties?page=1&limit=20');
+        $res = $client->request('GET', 'properties', $this->params);
+        
         // Return data
-        return response($request->getBody());        
+        return response($res->getBody());
     }
 }
