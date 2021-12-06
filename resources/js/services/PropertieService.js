@@ -1,7 +1,7 @@
 class PropertieService {
     
     getPropierties(params){
-        return axios.get(`/api/properties` );
+        return axios.get(`/api/properties`, { params: params } );
     }
 }
 
